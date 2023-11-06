@@ -38,26 +38,9 @@ h1,h2{
   height: 60px;
   cursor: pointer;
   }
-  /* .test {
-    padding:5px;
-    margin-right:5px;
-    font-size:50px;
-    visibility:hidden;   
-    
-  border:1px solid green; 
-    
-  } */
-  /* .testOk {
-    padding:5px;
-    margin-right:5px;
-    font-size:50px;
-    visibility:visible;
-  } */
   
   div{
     text-align: center;  
-    /* margin-right:5px; */
-    /* border-bottom:2px solid red; */
   }
   .mot_image{
     display: flex;
