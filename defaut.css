@@ -1,0 +1,73 @@
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding:0px;
+}
+
+.container {
+  border: 1px solid black;
+  height: 100vh;
+  padding:0px 15px;
+}
+h1,h2{
+  margin-bottom: 20px;
+}
+.chercherMot{
+  padding: 10px;
+  border: 1px solid green;
+  width:50%;
+  height: 300px;
+}
+  #alphabet{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    font-size: 50px;
+    padding: 0px 50px;
+  }
+
+  .lettre {
+  text-align: center;
+  border: 1px solid black;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  }
+  /* .test {
+    padding:5px;
+    margin-right:5px;
+    font-size:50px;
+    visibility:hidden;   
+    
+  border:1px solid green; 
+    
+  } */
+  /* .testOk {
+    padding:5px;
+    margin-right:5px;
+    font-size:50px;
+    visibility:visible;
+  } */
+  
+  div{
+    text-align: center;  
+    /* margin-right:5px; */
+    /* border-bottom:2px solid red; */
+  }
+  .mot_image{
+    display: flex;
+  }
+
+  .image{
+    border: 1px solid blue;
+    width:50%;
+    height: 300px;
+  }
+  /* #mot{
+    padding: 10px;
+    border: 1px solid green;
+    width:50%;
+    height: 300px;
+  } */
