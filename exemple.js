@@ -1,5 +1,7 @@
 const mots = ["champagne","table","passoir","ecole","liberté","sarbacane"];
 
+let motTRouver = document.querySelector('button');
+
 // Sélection aléatoire d'un mot à deviner
 let selectMot = mots[Math.floor(Math.random() * mots.length)];
 console.log(`le mot selectionné est ${selectMot}`);
@@ -21,11 +23,23 @@ function resetGame() {
     updateDisplay();
 }
 
+//fonction pour deviner le mot 
+function motDeviner(){
+    let deviner = prompt("Quel est votre mot ?: ")
+    if (deviner == selectMot) {
+        alert("Félicitations ! Vous avez gagné !");
+    resetGame();
+    }else{
+        attempts--;
+        updateDisplay();
+    }
+
+}
 
 // Fonction pour mettre à jour l'affichage
 function updateDisplay() {
     document.getElementById("mot").textContent = guessedWord.join(" ");
-    // document.getElementById("attempts").textContent = attempts;
+     document.getElementById("attempts").textContent = attempts;
     // document.getElementById("used-letters").textContent = usedLetters.join(", ");
 }
 // Nombre de tentatives restantes
@@ -85,6 +99,9 @@ function handleClick(event) {
   letter.addEventListener("click", handleClick);
   
 });
+
+//Ajoutez un gestionnaire d'evènements au clic du boutton
+motTRouver.addEventListener("click",motDeviner)
 
 updateDisplay();
 
