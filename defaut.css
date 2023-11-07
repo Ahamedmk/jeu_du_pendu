@@ -21,6 +21,11 @@ h1,h2{
 .motTrouve{
   margin: 15px;
 }
+.img_pendu{
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}
   #alphabet{
     display: flex;
     justify-content: center;
@@ -47,6 +52,9 @@ h1,h2{
   }
 
   .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid blue;
     width:50%;
     height: 300px;
