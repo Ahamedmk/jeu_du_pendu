@@ -1,6 +1,8 @@
 const mots = ["champagne","table","passoir","ecole","liberté","sarbacane"];
 
 let motTRouver = document.querySelector('button');
+let image = document.querySelector('.img_pendu');
+let nbreImage = 1 ;
 
 // Sélection aléatoire d'un mot à deviner
 let selectMot = mots[Math.floor(Math.random() * mots.length)];
@@ -18,8 +20,10 @@ function resetGame() {
     selectMot = mots[Math.floor(Math.random() * mots.length)];
     wordToGuess = Array.from(selectMot);
     guessedWord = new Array(wordToGuess.length).fill("_");
+    // image.innerHTML = `<img src="/images/1.png" alt="le_pendu">`;
     attempts = 6;
     usedLetters = [];
+     nbreImage = 1;
     updateDisplay();
 }
 
@@ -31,6 +35,7 @@ function motDeviner(){
     resetGame();
     }else{
         attempts--;
+        nbreImage++;
         updateDisplay();
     }
 
@@ -40,6 +45,7 @@ function motDeviner(){
 function updateDisplay() {
     document.getElementById("mot").textContent = guessedWord.join(" ");
      document.getElementById("attempts").textContent = attempts;
+     image.innerHTML = `<img src="/images/${nbreImage}.png" alt="le_pendu">`;
     // document.getElementById("used-letters").textContent = usedLetters.join(", ");
 }
 // Nombre de tentatives restantes
@@ -66,6 +72,7 @@ function guessLetter(letter) {
     }
 } else {
     attempts--;
+    nbreImage++;
 }
 console.log(attempts)
 // Mettre à jour l'affichage
@@ -73,11 +80,11 @@ console.log(attempts)
 
 // Vérifier si le jeu est terminé
 if (attempts === 0) {
-    alert("Vous avez perdu. Le mot était : " + selectMot);
-    resetGame();
+    setTimeout(() =>{alert("Vous avez perdu. Le mot était : " + selectMot)},1000);
+    setTimeout(() =>{resetGame()},2000);
 } else if (!guessedWord.includes("_")) {
-    alert("Félicitations ! Vous avez gagné !");
-    resetGame();
+    setTimeout(() =>{alert("Félicitations ! Vous avez gagné !")},1000);
+    setTimeout(() =>{resetGame()},2000);
 }
 }
 
