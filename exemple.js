@@ -1,4 +1,4 @@
-const mots = ["champagne","table","passoir","ecole","liberté","sarbacane"];
+const mots = ["champagne","table","passoir","ecole","manga","sarbacane","fruit"];
 
 let motTRouver = document.querySelector('button');
 let image = document.querySelector('.img_pendu');
@@ -31,8 +31,8 @@ function resetGame() {
 function motDeviner(){
     let deviner = prompt("Quel est votre mot ?: ")
     if (deviner == selectMot) {
-        alert("Félicitations ! Vous avez gagné !");
-    resetGame();
+        setTimeout(() =>{alert("Félicitations ! Vous avez gagné !")},1000);
+        setTimeout(() =>{resetGame()},2000);
     }else{
         attempts--;
         nbreImage++;
@@ -59,9 +59,11 @@ let usedLetters = [];
 function guessLetter(letter) {
   // Vérifier si la lettre a déjà été devinée
   if (usedLetters.includes(letter)) {
-      alert("Vous avez déjà deviné cette lettre.");
+      alert("Vous avez déjà tapé cette lettre.");
       return;
-  }
+  } else {
+      usedLetters.push(letter);
+  };
 
    // Vérifier si la lettre est dans le mot
    if (wordToGuess.includes(letter)) {
