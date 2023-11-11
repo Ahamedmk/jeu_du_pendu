@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   color: white;
   height: 100vh;
   padding:0px 15px;
@@ -19,7 +19,7 @@ h1,h2{
 }
 .chercherMot{
   padding: 10px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width:50%;
   height: 300px;
 }
@@ -29,13 +29,13 @@ h1,h2{
 .img_pendu{
   width: 200px;
   height: 200px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
   #alphabet{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-size: 50px;
     padding: 0px 50px;
   }
@@ -49,17 +49,13 @@ h1,h2{
   margin: 10px;
    width: 60px;
   height: 60px; 
-  /* padding: 60px; */
   cursor: pointer;
   border-radius: 5px;
   background: #ffd17b;
   position: relative;
   box-shadow: 0 6px #efa424;
   }
- /* .lettre:hover {
-  box-shadow: 0 4px #efa424;
-  top: 2px;
-}  */
+ 
 .lettre:active {
   box-shadow: 0 0 #efa424;
   top: 6px;
@@ -76,15 +72,15 @@ h1,h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width:50%;
     height: 300px;
   }
   #mot{
     padding: 10px;
-    border: 1px solid green;
-    /* width:50%; */
+    /* border: 1px solid green; */
+    
     margin: 0 auto;
     font-size: 50px;
-    /* height: 300px; */
+    
   } 
