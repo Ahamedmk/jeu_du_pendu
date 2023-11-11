@@ -31,6 +31,7 @@ function resetGame() {
 function motDeviner(){
     let deviner = prompt("Quel est votre mot ?: ")
     if (deviner == selectMot) {
+        confetti();
         setTimeout(() =>{alert("Félicitations ! Vous avez gagné !")},1000);
         setTimeout(() =>{resetGame()},2000);
     }else{
@@ -86,6 +87,9 @@ if (attempts === 0) {
     setTimeout(() =>{resetGame()},2000);
 } else if (!guessedWord.includes("_")) {
     setTimeout(() =>{alert("Félicitations ! Vous avez gagné !")},1000);
+    confetti({
+        particleCount: 150
+      });
     setTimeout(() =>{resetGame()},2000);
 }
 }
