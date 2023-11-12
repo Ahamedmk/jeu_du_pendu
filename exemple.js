@@ -1,29 +1,33 @@
-const mots = ["champagne","table","passoir","ecole","manga","sarbacane","fruit"];
+const mots = ["champagne","table","passoir","ecole","manga","sarbacane","fruit","naruto","itachi"];
 
-let motTRouver = document.querySelector('button');
+let alphabet = document.querySelector('#alphabet');
+let dataLetter = alphabet.querySelectorAll("[data-id]");
+let motComplet = document.querySelector('#mot');
+let motTrouver = document.querySelector('button');
 let image = document.querySelector('.img_pendu');
 let nbreImage = 1 ;
 
+// Nombre de tentatives restantes
+let attempts = 6;
+
 // Sélection aléatoire d'un mot à deviner
 let selectMot = mots[Math.floor(Math.random() * mots.length)];
-console.log(`le mot selectionné est ${selectMot}`);
 
 // Création d'un tableau pour afficher les lettres du mot
  let wordToGuess = selectMot.split('');
+ 
 //let wordToGuess = Array.from(selectMot);
-console.log(`le tableau est ${wordToGuess}`)
 let guessedWord = new Array(wordToGuess.length).fill("_");
-console.log(`le mot selectionné avec trait est ${guessedWord}`)
+
 
 // Fonction pour réinitialiser le jeu
 function resetGame() {
     selectMot = mots[Math.floor(Math.random() * mots.length)];
-    wordToGuess = Array.from(selectMot);
+     wordToGuess = Array.from(selectMot);
     guessedWord = new Array(wordToGuess.length).fill("_");
-    // image.innerHTML = `<img src="/images/1.png" alt="le_pendu">`;
     attempts = 6;
     usedLetters = [];
-     nbreImage = 1;
+    nbreImage = 1;
     updateDisplay();
 }
 
@@ -49,9 +53,6 @@ function updateDisplay() {
      image.innerHTML = `<img src="/images/${nbreImage}.png" alt="le_pendu">`;
     // document.getElementById("used-letters").textContent = usedLetters.join(", ");
 }
-// Nombre de tentatives restantes
-let attempts = 6;
-console.log(`nombre de tentative ${attempts}`)
 
 // Liste des lettres déjà utilisées
 let usedLetters = [];
@@ -94,12 +95,6 @@ if (attempts === 0) {
 }
 }
 
-
-
-let alphabet = document.querySelector('#alphabet');
-let dataLetter = alphabet.querySelectorAll("[data-id]");
-let motComplet = document.querySelector('#mot');
-
 // Fonction pour gérer le clic sur les lettres
 function handleClick(event) {
   const clickedLetter = event.target.dataset.id;
@@ -114,7 +109,7 @@ function handleClick(event) {
 });
 
 //Ajoutez un gestionnaire d'evènements au clic du boutton
-motTRouver.addEventListener("click",motDeviner)
+motTrouver.addEventListener("click",motDeviner)
 
 updateDisplay();
 
