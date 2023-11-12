@@ -1,11 +1,17 @@
-const mots = ["champagne","table","passoir","ecole","manga","sarbacane","fruit","naruto","itachi"];
+const mots = ["champagne","table","passoir","ecole","manga","sarbacane","fruit","fermier",
+"pays"];
 
 let alphabet = document.querySelector('#alphabet');
 let dataLetter = alphabet.querySelectorAll("[data-id]");
 let motComplet = document.querySelector('#mot');
 let motTrouver = document.querySelector('button');
+let lettreUtilise = document.querySelector('#usedLetters');
+let chance = document.querySelector("#attempts");
 let image = document.querySelector('.img_pendu');
 let nbreImage = 1 ;
+
+// Liste des lettres déjà utilisées
+let usedLetters = [];
 
 // Nombre de tentatives restantes
 let attempts = 6;
@@ -15,16 +21,14 @@ let selectMot = mots[Math.floor(Math.random() * mots.length)];
 
 // Création d'un tableau pour afficher les lettres du mot
  let wordToGuess = selectMot.split('');
- 
-//let wordToGuess = Array.from(selectMot);
-let guessedWord = new Array(wordToGuess.length).fill("_");
+let guessedWord =Array(wordToGuess.length).fill("_");
 
 
 // Fonction pour réinitialiser le jeu
 function resetGame() {
     selectMot = mots[Math.floor(Math.random() * mots.length)];
-     wordToGuess = Array.from(selectMot);
-    guessedWord = new Array(wordToGuess.length).fill("_");
+     wordToGuess = selectMot.split('');
+     guessedWord = Array(wordToGuess.length).fill("_");
     attempts = 6;
     usedLetters = [];
     nbreImage = 1;
@@ -48,14 +52,13 @@ function motDeviner(){
 
 // Fonction pour mettre à jour l'affichage
 function updateDisplay() {
-    document.getElementById("mot").textContent = guessedWord.join(" ");
-     document.getElementById("attempts").textContent = attempts;
+    motComplet.textContent = guessedWord.join(" ");
+     chance.textContent = attempts;
      image.innerHTML = `<img src="/images/${nbreImage}.png" alt="le_pendu">`;
-    // document.getElementById("used-letters").textContent = usedLetters.join(", ");
+     lettreUtilise.textContent = usedLetters;
 }
 
-// Liste des lettres déjà utilisées
-let usedLetters = [];
+
 
 // Fonction pour deviner une lettre
 function guessLetter(letter) {

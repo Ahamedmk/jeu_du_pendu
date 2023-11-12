@@ -9,9 +9,7 @@ body {
 }
 
 .container {
-  /* border: 1px solid black; */
   color: white;
-  height: 100vh;
   padding:0px 15px;
 }
 h1,h2{
@@ -19,7 +17,6 @@ h1,h2{
 }
 .chercherMot{
   padding: 10px;
-  /* border: 1px solid green; */
   width:50%;
   height: 300px;
 }
@@ -29,15 +26,16 @@ h1,h2{
 .img_pendu{
   width: 200px;
   height: 200px;
-  /* border: 2px solid black; */
 }
   #alphabet{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* border: 1px solid red; */
     font-size: 50px;
     padding: 0px 50px;
+  }
+  p{
+    padding-bottom: 10px;
   }
 
   .lettre {
@@ -72,14 +70,11 @@ h1,h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid blue; */
     width:50%;
     height: 300px;
   }
   #mot{
     padding: 10px;
-    /* border: 1px solid green; */
     margin: 0 auto;
-    font-size: 50px;
-    
+    font-size: 50px; 
   } 
